@@ -1,4 +1,56 @@
-# hand-gesture-recognition-using-mediapipe
+# Gesturize: Using hand reccognition to control your computer
+Estimate hand pose using MediaPipe (Python version).<br> 
+
+<ul>
+<li>Accurately captures and analyses hand movements in real-time, mapping them to specific actions.</li>
+<li>Integrating gesture based commands to generally manoeuvre the computer.</li>
+<li>Technology Used: Python, Tensorflow, OpenCV, Mediapipe.</li>
+</ul>
+
+Application that allows the user to control their computers using defined hand gestures.
+Accurately captures and analyses hand movements in real-time, mapping them to specific actions.
+Integrating gesture based commands to generally manoeuvre the computer.
+Technology Used: Python, Tensorflow, OpenCV, Mediapipe.
+
+The program recognizes hand signs and finger gestures with a simple MLP using the detected key points. The key points are then assigned to different input controls of the PC.
+<br> 
+
+![demo-video](https://private-user-images.githubusercontent.com/64493618/265208063-92ca8a39-8174-4a68-b4cd-63399941c22e.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjAwMDAxOTksIm5iZiI6MTcxOTk5OTg5OSwicGF0aCI6Ii82NDQ5MzYxOC8yNjUyMDgwNjMtOTJjYThhMzktODE3NC00YTY4LWI0Y2QtNjMzOTk5NDFjMjJlLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA3MDMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNzAzVDA5NDQ1OVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWVhMThjN2ZhMTJiMmVkMDIzZTAzMGRmNThiM2E0Mjc1NGRkZjdkODgxOTMwNjQxNDkzMTlkODc2MTAzN2I0ZWUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.UQdMbWhwpgCQ4V2ihjtTEqk41sPXuqsa5mlmkezUx-k)
+
+# Requirements
+* mediapipe 0.8.1
+* OpenCV 3.4.2 or Later
+* Tensorflow 2.3.0 or Later<br>tf-nightly 2.5.0.dev or later (Only when creating a TFLite for an LSTM model)
+* scikit-learn 0.23.2 or Later (Only if you want to display the confusion matrix) 
+* matplotlib 3.3.2 or Later (Only if you want to display the confusion matrix)
+
+# Demo
+Here's how to run the demo using your webcam.
+```bash
+python app.py
+```
+
+The following options can be specified when running the demo.
+* --device<br>Specifying the camera device number (Default：0)
+* --width<br>Width at the time of camera capture (Default：960)
+* --height<br>Height at the time of camera capture (Default：540)
+* --use_static_image_mode<br>Whether to use static_image_mode option for MediaPipe inference (Default：Unspecified)
+* --min_detection_confidence<br>
+Detection confidence threshold (Default：0.5)
+* --min_tracking_confidence<br>
+Tracking confidence threshold (Default：0.5)
+
+</pre>
+### app.py
+This is a sample program for inference.<br>
+In addition, learning data (key points) for hand sign recognition,<br>
+You can also collect training data (index finger coordinate history) for finger gesture recognition.
+
+### keypoint_classification.ipynb
+This is a model training script for hand sign recognition.
+
+### point_history_classification.ipynb
+This is a model training script for finger gesture recognition.# hand-gesture-recognition-using-mediapipe
 Estimate hand pose using MediaPipe (Python version).<br> This is a sample 
 program that recognizes hand signs and finger gestures with a simple MLP using the detected key points.
 <br> ❗ _️**This is English Translated version of the [original repo](https://github.com/Kazuhito00/hand-gesture-recognition-using-mediapipe). All Content is translated to english along with comments and notebooks**_ ❗
